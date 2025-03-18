@@ -1,0 +1,151 @@
+[
+  {
+    "role": "system",
+    "content": "Imagine you are a robot browsing the web, just like humans. Now you need to complete a task. In each iteration, you will receive an Observation that includes a screenshot of a webpage and some texts. This screenshot will feature Numerical Labels placed in the TOP LEFT corner of each Web Element.\nCarefully analyze the visual information to identify the Numerical Label corresponding to the Web Element that requires interaction, then follow the guidelines and choose one of the following actions:\n1. Click a Web Element.\n2. Delete existing content in a textbox and then type content. \n3. Scroll up or down. Multiple scrolls are allowed to browse the webpage. Pay attention!! The default scroll is the whole window. If the scroll widget is located in a certain area of the webpage, then you have to specify a Web Element in that area. I would hover the mouse there and then scroll.\n4. Wait. Typically used to wait for unfinished webpage processes, with a duration of 5 seconds.\n5. Go back, returning to the previous webpage.\n6. Google, directly jump to the Google search page. When you can't find information in some websites, try starting over with Google.\n7. Answer. This action should only be chosen when all questions in the task have been solved.\n\nCorrespondingly, Action should STRICTLY follow the format:\n- Click [Numerical_Label]\n- Type [Numerical_Label]; [Content]\n- Scroll [Numerical_Label or WINDOW]; [up or down]\n- Wait\n- GoBack\n- Google\n- ANSWER; [content]\n\nKey Guidelines You MUST follow:\n* Action guidelines *\n1) To input text, NO need to click textbox first, directly type content. After typing, the system automatically hits `ENTER` key. Sometimes you should click the search button to apply search filters. Try to use simple language when searching.  \n2) You must Distinguish between textbox and search button, don't type content into the button! If no textbox is found, you may need to click the search button first before the textbox is displayed. \n3) Execute only one action per iteration. \n4) STRICTLY Avoid repeating the same action if the webpage remains unchanged. You may have selected the wrong web element or numerical label. Continuous use of the Wait is also NOT allowed.\n5) When a complex Task involves multiple questions or steps, select \"ANSWER\" only at the very end, after addressing all of these questions (steps). Flexibly combine your own abilities with the information in the web page. Double check the formatting requirements in the task when ANSWER. \n* Web Browsing Guidelines *\n1) Don't interact with useless web elements like Login, Sign-in, donation that appear in Webpages. Pay attention to Key Web Elements like search textbox and menu.\n2) Vsit video websites like YouTube is allowed BUT you can't play videos. Clicking to download PDF is allowed and will be analyzed by the Assistant API.\n3) Focus on the numerical labels in the TOP LEFT corner of each rectangle (element). Ensure you don't mix them up with other numbers (e.g. Calendar) on the page.\n4) Focus on the date in task, you must look for results that match the date. It may be necessary to find the correct year, month and day at calendar.\n5) Pay attention to the filter and sort functions on the page, which, combined with scroll, can help you solve conditions like 'highest', 'cheapest', 'lowest', 'earliest', etc. Try your best to find the answer that best fits the task.\n\n* ESG News Guidelines *\n1) For ESG (Environmental, Social, Governance) related tasks, focus on identifying the correct category of news in the navigation menu (e.g., Environmental, Social/DEI, or Governance sections).\n2) When reading ESG news, extract key information including title, publication date, main content, and implications for sustainability.\n3) When summarizing ESG news, focus on the key facts, statistics, policy changes, corporate initiatives, and potential impacts on sustainability.\n4) Pay attention to specific ESG terms like carbon emissions, climate change, renewable energy (for Environmental), DEI, community impact, human rights (for Social), and corporate leadership, transparency, ethics (for Governance).\n5) When asked to analyze the significance of news for sustainability, consider short-term impacts, long-term implications, industry trends, and potential influence on policies or practices.\n\nYour reply should strictly follow the format:\nThought: {Your brief thoughts (briefly summarize the info that will help ANSWER)}\nAction: {One Action format you choose}\n\nThen the User will provide:\nObservation: {A labeled screenshot Given by User}"
+  },
+  {
+    "role": "user",
+    "content": "Now given a task: \u700f\u89bdESG News\u7db2\u7ad9\uff0c\u627e\u5230\u6700\u65b0\u7684\u6709\u95dc\u6cbb\u7406(Governance)\u76f8\u95dc\u65b0\u805e\uff0c\u95b1\u8b80\u5176\u4e2d\u4e00\u7bc7\u5b8c\u6574\u5167\u5bb9\uff0c\u7136\u5f8c\u63d0\u4f9b\u4ee5\u4e0b\u4fe1\u606f\uff1a1. \u65b0\u805e\u6a19\u984c 2. \u767c\u5e03\u65e5\u671f 3. \u65b0\u805e\u4e3b\u8981\u5167\u5bb9\u6458\u8981(100-150\u5b57) 4. \u9019\u5247\u65b0\u805e\u5c0d\u516c\u53f8\u6cbb\u7406\u6216\u4f01\u696d\u6c38\u7e8c\u767c\u5c55\u7684\u610f\u7fa9  Please interact with https://esgnews.com/ and get the answer.Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: We need to focus on finding Governance-related news. There's no direct link to Governance in this view. I'll scroll to see if more options or categories become visible.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: We still need to locate Governance-specific news. The current view does not show anything directly related to Governance. Let's explore further options.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: We still don't see Governance-related news directly. I should try navigating to see if a specific Governance section is available.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: We still haven't found Governance news. I should check if there are more sections related to Governance by exploring further.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: We need to explore specific Governance-related articles. Since we've encountered mostly energy and environmental articles, looking directly for a Governance section or related content is necessary. I'll try to find a search tool or navigate.\n\nAction: Click [2]"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: None of the visible sections specifically represent Governance news. I should use the search bar to look for Governance-related articles.\n\nAction: Click [2]"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The search function should allow us to find specific Governance-related articles. Now that the search bar might be accessible, we should input our query.\n\nAction: Type [2]; Governance News"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The previous attempt to use the search bar didn't work as it was not a textbox. We need to find or filter for Governance-related content possibly via articles.\n\nAction: Click [1]"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: None of the articles visible are explicitly related to Governance issues. I'll need to search or navigate to find Governance articles specifically.\n\nAction: Click [2]"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: I need to find the latest Governance news article. The search bar is visible; I'll try using it to find Governance content.\n\nAction: Click [2]"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The search bar hasn't yielded results yet. I'll try another method to find Governance content by using one of the articles to check if it has Governance details.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Observation: please analyze the attached screenshot and give the Thought and Action. I've provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[0]: \"Visit Our Channel\";\t[1]: \"Listen to this story:\";\t[2]: \"Jon Gosier\";\t[3]: \"Matt Bird\";\t[4]: \"FilmHedge\";\t[5]: \"Sustainable Tax Incentives Driving Investor Interest in Film and TV Finance \u2013 Section 181\";\t[7]: \"IFAC Updates Global Accountancy Standards to Embed Sustainability Reporting and Assurance\";\t[9]: \"Related Stories\";\t[11]: \"Air Liquide Issues \u20ac500 Million Green Bond to Fund Low-Carbon Hydrogen and Energy Transition\";\t[13]: \"Copenhagen Infrastructure Partners Raises Record \u20ac12 Billion for Energy Transition Infrastructure Fund\";\t[15]: \"Italy\u2019s Grid Operator Terna to Invest \u20ac23 Billion to Boost Renewable Capacity\";\t[17]: \"Allianz Boosts Sustainable Investments by \u20ac4.5 Billion, Cuts Employee Emissions 61.5%\";\t[20]: \"DEI Headlines Week In Review \u2013 March 15 2025\";\t[21]: \"ESG News\";\t[22]: <button> \"Allow\";\t[23]: <button> \"Cancel\";"
+      },
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,{b64_img}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The article \"IFAC Updates Global Accountancy Standards to Embed Sustainability Reporting and Assurance\" seems related to Governance. I will access this article for relevant information.\n\nAction: Click [7]"
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Observation: please analyze the attached screenshot and give the Thought and Action. I've provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[3]: \"ESG News\";\t[4]: \"ESG Business\";\t[5]: \"ESG Investing\";\t[6]: \"ESG Lifestyle\";\t[7]: \"ESG Events\";\t[8]: \"International\";\t[9]: \"Video\";\t[10]: \"Get Breaking ESG News Alerts\";\t[11]: \"Join Now\";\t[12]: \"videocam\";\t[13]: \"Seven simple questions\";\t[14]: \"ESG Reporting\";\t[15]: \"News\";\t[16]: \"Sustainable Finance\";\t[17]: \"ESG News\";\t[18]: \"Share on Facebook\";\t[19]: \"Share on Twitter\";\t[20]: \"Share on LinkedIn\";\t[21]: \"2025 Wall Street Green Summit\";\t[22]: \"CANADA Certified Sustainability ESG Practitioner Program, Leadership Edition 2025\";\t[23]: \"View Calendar\";\t[25]: \"DEI Headlines Week In Review \u2013 March 15 2025\";\t[27]: \"Mercedes-Benz, DB Schenker Set Record SAF Deal to Cut 40,000 Tons of CO2 Emissions\";\t[29]: \"IFAC Updates Global Accountancy Standards to Embed Sustainability Reporting and Assurance\";\t[31]: \"JTC Partners with Novata to Enhance Sustainability Services for Asset Managers\";"
+      },
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,{b64_img}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: We have accessed an article concerning governance: \"IFAC Updates Global Accountancy Standards to Embed Sustainability Reporting and Assurance.\" I need to read the full content to extract the necessary details.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Observation: please analyze the attached screenshot and give the Thought and Action. I've provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[0]: \"Listen to this story:\";\t[1]: \"New sustainability-focused competencies are now mandatory in professional accountants\u2019 training.\";\t[2]: \"Updates establish a global standard for sustainability reporting and assurance.\";\t[3]: \"Revisions emphasize integrity, authenticity, and equity in professional assessments.\";\t[5]: \"Premier League Launches Environmental Sustainability Strategy to Achieve Net Zero by 2040\";\t[7]: \"Related Stories\";\t[9]: \"DEI Headlines Week In Review \u2013 March 15 2025\";\t[11]: \"Rio Tinto Secures 600MW Solar and Battery Deal to Cut Gladstone Smelter Emissions by 70%\";\t[13]: \"Mercedes-Benz, DB Schenker Set Record SAF Deal to Cut 40,000 Tons of CO2 Emissions\";\t[15]: \"Clarity AI Unveils AI-Driven Solution to Revolutionize Sustainability Research for Investors\";\t[18]: \"Mercedes-Benz, DB Schenker Set Record SAF Deal to Cut 40,000 Tons of CO2 Emissions\";\t[19]: \"ESG News\";\t[20]: <button> \"Allow\";\t[21]: <button> \"Cancel\";"
+      },
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,{b64_img}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: I've gathered essential content from the article about the IFAC updates on global accountancy standards. Now I can summarize the information required for the task.\n\nAction: ANSWER; \n1. **\u65b0\u805e\u6a19\u984c**: IFAC Updates Global Accountancy Standards to Embed Sustainability Reporting and Assurance  \n2. **\u767c\u5e03\u65e5\u671f**: March 14, 2025  \n3. **\u65b0\u805e\u4e3b\u8981\u5167\u5bb9\u6458\u8981**: \u570b\u969b\u6703\u8a08\u5e2b\u806f\u5408\u6703\uff08IFAC\uff09\u5df2\u66f4\u65b0\u5176\u570b\u969b\u6559\u80b2\u6a19\u6e96\uff0c\u5c07\u53ef\u6301\u7e8c\u6027\u80fd\u529b\u7d0d\u5165\u4e86\u5c08\u696d\u6703\u8a08\u5e2b\u7684\u57f9\u8a13\u4e2d\u3002\u65b0\u7684\u6a19\u6e96\u5f37\u8abf\u4e86\u8aa0\u4fe1\u3001\u771f\u8aa0\u548c\u516c\u5e73\u5728\u5c08\u696d\u8a55\u4f30\u4e2d\u7684\u91cd\u8981\u6027\uff0c\u4ee5\u61c9\u5c0d\u5168\u7403\u65e5\u76ca\u589e\u9577\u7684\u53ef\u6301\u7e8c\u6027\u5831\u544a\u9700\u6c42\u3002\u9019\u4e9b\u66f4\u65b0\u5c07\u53ef\u6301\u7e8c\u6027\u80fd\u529b\uff08\u5305\u62ec\u5206\u6790\u3001\u5831\u544a\u548c\u4fdd\u8b49\uff09\u878d\u5165\u57fa\u790e\u57f9\u8a13\u4e2d\uff0c\u4ee5\u78ba\u4fdd\u5c08\u696d\u6703\u8a08\u5e2b\u5177\u5099\u652f\u6301\u9ad8\u8cea\u91cf\u53ef\u6301\u7e8c\u6027\u5831\u544a\u548c\u4fdd\u8b49\u7684\u80fd\u529b\u3002  \n4. **\u9019\u5247\u65b0\u805e\u5c0d\u516c\u53f8\u6cbb\u7406\u6216\u4f01\u696d\u6c38\u7e8c\u767c\u5c55\u7684\u610f\u7fa9**: \u9019\u4e9b\u66f4\u65b0\u63d0\u5347\u4e86\u53ef\u6301\u7e8c\u6027\u5831\u544a\u7684\u6a19\u6e96\uff0c\u5e6b\u52a9\u516c\u53f8\u66f4\u597d\u5730\u5c0d\u61c9\u74b0\u5883\u3001\u793e\u6703\u548c\u7ba1\u6cbb (ESG) \u8cac\u4efb\u3002\u900f\u904e\u5f37\u5316\u5c08\u696d\u6703\u8a08\u5e2b\u7684\u80fd\u529b\uff0c\u7d44\u7e54\u80fd\u66f4\u6709\u6548\u5730\u9075\u5faa\u53ef\u6301\u7e8c\u6027\u6163\u4f8b\uff0c\u5f9e\u800c\u63d0\u5347\u6cbb\u7406\u900f\u660e\u5ea6\u548c\u6574\u9ad4\u53ef\u6301\u7e8c\u6027\u767c\u5c55\u76ee\u6a19\u3002"
+  }
+]

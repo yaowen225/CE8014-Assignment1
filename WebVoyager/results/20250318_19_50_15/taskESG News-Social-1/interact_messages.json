@@ -1,0 +1,87 @@
+[
+  {
+    "role": "system",
+    "content": "Imagine you are a robot browsing the web, just like humans. Now you need to complete a task. In each iteration, you will receive an Observation that includes a screenshot of a webpage and some texts. This screenshot will feature Numerical Labels placed in the TOP LEFT corner of each Web Element.\nCarefully analyze the visual information to identify the Numerical Label corresponding to the Web Element that requires interaction, then follow the guidelines and choose one of the following actions:\n1. Click a Web Element.\n2. Delete existing content in a textbox and then type content. \n3. Scroll up or down. Multiple scrolls are allowed to browse the webpage. Pay attention!! The default scroll is the whole window. If the scroll widget is located in a certain area of the webpage, then you have to specify a Web Element in that area. I would hover the mouse there and then scroll.\n4. Wait. Typically used to wait for unfinished webpage processes, with a duration of 5 seconds.\n5. Go back, returning to the previous webpage.\n6. Google, directly jump to the Google search page. When you can't find information in some websites, try starting over with Google.\n7. Answer. This action should only be chosen when all questions in the task have been solved.\n\nCorrespondingly, Action should STRICTLY follow the format:\n- Click [Numerical_Label]\n- Type [Numerical_Label]; [Content]\n- Scroll [Numerical_Label or WINDOW]; [up or down]\n- Wait\n- GoBack\n- Google\n- ANSWER; [content]\n\nKey Guidelines You MUST follow:\n* Action guidelines *\n1) To input text, NO need to click textbox first, directly type content. After typing, the system automatically hits `ENTER` key. Sometimes you should click the search button to apply search filters. Try to use simple language when searching.  \n2) You must Distinguish between textbox and search button, don't type content into the button! If no textbox is found, you may need to click the search button first before the textbox is displayed. \n3) Execute only one action per iteration. \n4) STRICTLY Avoid repeating the same action if the webpage remains unchanged. You may have selected the wrong web element or numerical label. Continuous use of the Wait is also NOT allowed.\n5) When a complex Task involves multiple questions or steps, select \"ANSWER\" only at the very end, after addressing all of these questions (steps). Flexibly combine your own abilities with the information in the web page. Double check the formatting requirements in the task when ANSWER. \n* Web Browsing Guidelines *\n1) Don't interact with useless web elements like Login, Sign-in, donation that appear in Webpages. Pay attention to Key Web Elements like search textbox and menu.\n2) Vsit video websites like YouTube is allowed BUT you can't play videos. Clicking to download PDF is allowed and will be analyzed by the Assistant API.\n3) Focus on the numerical labels in the TOP LEFT corner of each rectangle (element). Ensure you don't mix them up with other numbers (e.g. Calendar) on the page.\n4) Focus on the date in task, you must look for results that match the date. It may be necessary to find the correct year, month and day at calendar.\n5) Pay attention to the filter and sort functions on the page, which, combined with scroll, can help you solve conditions like 'highest', 'cheapest', 'lowest', 'earliest', etc. Try your best to find the answer that best fits the task.\n\n* ESG News Guidelines *\n1) For ESG (Environmental, Social, Governance) related tasks, focus on identifying the correct category of news in the navigation menu (e.g., Environmental, Social/DEI, or Governance sections).\n2) When reading ESG news, extract key information including title, publication date, main content, and implications for sustainability.\n3) When summarizing ESG news, focus on the key facts, statistics, policy changes, corporate initiatives, and potential impacts on sustainability.\n4) Pay attention to specific ESG terms like carbon emissions, climate change, renewable energy (for Environmental), DEI, community impact, human rights (for Social), and corporate leadership, transparency, ethics (for Governance).\n5) When asked to analyze the significance of news for sustainability, consider short-term impacts, long-term implications, industry trends, and potential influence on policies or practices.\n6) Always write summaries and analysis in Traditional Chinese (\u7e41\u9ad4\u4e2d\u6587) unless explicitly instructed otherwise, even if the original news is in English. Translate the key points accurately while preserving the essential meaning.\n\nYour reply should strictly follow the format:\nThought: {Your brief thoughts (briefly summarize the info that will help ANSWER)}\nAction: {One Action format you choose}\n\nThen the User will provide:\nObservation: {A labeled screenshot Given by User}"
+  },
+  {
+    "role": "user",
+    "content": "Now given a task: \u700f\u89bdESG News\u7db2\u7ad9\uff0c\u627e\u5230\u6700\u65b0\u7684\u6709\u95dc\u793e\u6703(Social)\u6216\u591a\u5143\u5e73\u7b49\u5305\u5bb9(DEI)\u76f8\u95dc\u65b0\u805e\uff0c\u95b1\u8b80\u5176\u4e2d\u4e00\u7bc7\u5b8c\u6574\u5167\u5bb9\uff0c\u7136\u5f8c\u63d0\u4f9b\u4ee5\u4e0b\u4fe1\u606f\uff1a1. \u65b0\u805e\u6a19\u984c 2. \u767c\u5e03\u65e5\u671f 3. \u65b0\u805e\u4e3b\u8981\u5167\u5bb9\u6458\u8981(100-150\u5b57) 4. \u9019\u5247\u65b0\u805e\u5c0d\u793e\u6703\u6c38\u7e8c\u767c\u5c55\u7684\u610f\u7fa9\u3002\u8acb\u52d9\u5fc5\u4f7f\u7528\u7e41\u9ad4\u4e2d\u6587\u64b0\u5beb\u6458\u8981\u548c\u5206\u6790\u90e8\u5206\u3002  Please interact with https://esgnews.com/ and get the answer.Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The task requires finding the latest news related to Social or DEI on the ESG News website. Currently, we are on the homepage and need to locate the Social or DEI section to proceed.\n\nAction: Click [2]"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: We are now in the main menu options, but I don't see a clear section for Social or DEI. Further exploration is required to identify the relevant news section.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": "Observation: A screenshot and some texts. (Omitted in context.)"
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: There is a news item specifically related to Diversity, Equity & Inclusion (DEI), titled \"DEI Headlines Week In Review \u2013 March 15 2025.\" This seems relevant for the task.\n\nAction: Click [8]"
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Observation: please analyze the attached screenshot and give the Thought and Action. I've provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[3]: \"ESG News\";\t[4]: \"ESG Business\";\t[5]: \"ESG Investing\";\t[6]: \"ESG Lifestyle\";\t[7]: \"ESG Events\";\t[8]: \"International\";\t[9]: \"Video\";\t[10]: \"Get Breaking ESG News Alerts\";\t[11]: \"Join Now\";\t[12]: \"videocam\";\t[13]: \"Seven simple questions\";\t[14]: \"Diversity, Equity & Inclusion\";\t[15]: \"ESG News\";\t[16]: \"ESG Policy\";\t[17]: \"News\";\t[18]: \"ESG News\";\t[19]: \"Share on Facebook\";\t[20]: \"Share on Twitter\";\t[21]: \"Share on LinkedIn\";\t[22]: \"Listen to this story:\";\t[23]: \"2025 Wall Street Green Summit\";\t[24]: \"ESG Adria Summit 2025\";\t[25]: \"CANADA Certified Sustainability ESG Practitioner Program, Leadership Edition 2025\";\t[26]: \"View Calendar\";\t[28]: \"Neste Issues \u20ac700 Million Green Bond to Expand World\u2019s Largest Renewable Diesel and SAF Facility\";\t[30]: \"Copenhagen Infrastructure Partners Raises Record \u20ac12 Billion for Energy Transition Infrastructure Fund\";\t[32]: \"Italy\u2019s Grid Operator Terna to Invest \u20ac23 Billion to Boost Renewable Capacity\";\t[33]: \"Allianz Boosts Sustainable Investments by \u20ac4.5 Billion, Cuts Employee Emissions 61.5%\";"
+      },
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,{b64_img}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: We have accessed the specific news article \"DEI Headlines Week In Review \u2013 March 15 2025\". Now, we need to read the full content to summarize and analyze it.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Observation: please analyze the attached screenshot and give the Thought and Action. I've provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[0]: \"Listen to this story:\";\t[2]: \"Allianz Boosts Sustainable Investments by \u20ac4.5 Billion, Cuts Employee Emissions 61.5%\";\t[4]: \"DEI Headlines Week In Review \u2013 March 15 2025\";\t[5]: \"Related Stories\";\t[7]: \"DEI Week in Review: Corporate and Government Shifts Reshape U.S. Workforce\";\t[9]: \"DEI Week in Review: Corporate and Policy Shifts in U.S.\";\t[11]: \"The Silent Killer of Shareholder Value: Weak Governance in a Polarized Market\";\t[13]: \"Major Banks Reduce Public DEI Commitments\";\t[16]: \"Allianz Boosts Sustainable Investments by \u20ac4.5 Billion, Cuts Employee Emissions 61.5%\";\t[17]: \"ESG News\";\t[18]: <button> \"Allow\";\t[19]: <button> \"Cancel\";"
+      },
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,{b64_img}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The article discusses recent developments in DEI initiatives from companies such as Kohl's and Starbucks. We need to summarize this information for the final analysis.\n\nAction: Scroll [WINDOW]; down"
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Observation: please analyze the attached screenshot and give the Thought and Action. I've provided the tag name of each element and the text it contains (if text exists). Note that <textarea> or <input> may be textbox, but not exactly. Please focus more on the screenshot and then refer to the textual information.\n[0]: \"DEI Week in Review: Corporate and Government Shifts Reshape U.S.\";\t[1]: \"Tweet\";\t[2]: <input> \"\";\t[3]: <input> \"\";\t[4]: <input> \"\";\t[6]: \"Related Stories\";\t[8]: \"DEI Week in Review: Corporate and Government Shifts Reshape U.S. Workforce\";\t[10]: \"DEI Week in Review: Corporate and Policy Shifts in U.S.\";\t[12]: \"The Silent Killer of Shareholder Value: Weak Governance in a Polarized Market\";\t[14]: \"Major Banks Reduce Public DEI Commitments\";\t[17]: \"Allianz Boosts Sustainable Investments by \u20ac4.5 Billion, Cuts Employee Emissions 61.5%\";\t[18]: \"ESG News\";\t[19]: <button> \"Allow\";\t[20]: <button> \"Cancel\";"
+      },
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,{b64_img}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": "Thought: The content elaborates on changes in DEI efforts by corporations like Lloyds Banking Group and policy shifts due to government actions. We now have enough information to summarize and analyze the impacts.\n\nAction: ANSWER; \n1. \u65b0\u805e\u6a19\u984c: DEI Headlines Week In Review \u2013 March 15 2025\n2. \u767c\u5e03\u65e5\u671f: 2025\u5e743\u670815\u65e5\n3. \u65b0\u805e\u4e3b\u8981\u5167\u5bb9\u6458\u8981: \u672c\u9031\u6709\u95dc\u7f8e\u570b\u548c\u6b50\u6d32\u7684\u591a\u5143\u5316\u3001\u516c\u5e73\u6027\u548c\u5305\u5bb9\u6027\uff08DEI\uff09\u7684\u982d\u689d\u65b0\u805e\u63a2\u8a0e\u4e86\u4e00\u4e9b\u516c\u53f8\u7684\u653f\u7b56\u4fee\u8a02\u3002Kohl\u2019s \u6539\u8b8a\u4e86\u5176\u9ad8\u5c64\u540d\u7a31\u4ee5\u4fc3\u9032\u4f01\u696d\u5305\u5bb9\u6027\uff0c\u4e26\u64f4\u5c55\u4f9b\u61c9\u5546\u591a\u6a23\u6027\u8a08\u5283\u3002\u540c\u6a23\uff0c\u661f\u5df4\u514b\u91cd\u7533\u4e86\u5176\u5c0d DEI \u7684\u627f\u8afe\uff0c\u800c\u82f1\u570b\u7684 Lloyds Banking Group \u548c\u653f\u5e9c\u6cd5\u898f\u5f71\u97ff\u4e5f\u6539\u8b8a\u4e86 DEI \u9054\u6210\u65b9\u5f0f\u3002\u6b64\u5916\uff0c\u884c\u653f\u547d\u4ee4\u548c\u76e3\u7ba1\u6a5f\u69cb\u7684\u5e72\u9810\u9032\u4e00\u6b65\u5f71\u97ff\u4e86\u9019\u4e9b\u9805\u76ee\u7684\u5be6\u65bd\u3002\n4. \u65b0\u805e\u5c0d\u793e\u6703\u6c38\u7e8c\u767c\u5c55\u7684\u610f\u7fa9: \u9019\u5247\u65b0\u805e\u53cd\u6620\u4e86\u4f01\u696d\u548c\u653f\u5e9c\u5728\u793e\u6703\u8cac\u4efb\u548c\u5305\u5bb9\u6027\u653f\u7b56\u4e0a\u7684\u4e0d\u65b7\u8f49\u8b8a\uff0c\u5f37\u8abf\u4e86 DEI \u5728\u516c\u53f8\u6587\u5316\u4e2d\u7684\u91cd\u8981\u6027\uff0c\u4ee5\u53ca\u5b83\u5c0d\u65bc\u5275\u9020\u4e00\u500b\u66f4\u516c\u5e73\u8207\u5305\u5bb9\u7684\u5de5\u4f5c\u74b0\u5883\u7684\u6f5b\u5728\u5f71\u97ff\u3002\u6b64\u985e\u8f49\u8b8a\u53ef\u80fd\u4fc3\u6210\u66f4\u5177\u793e\u6703\u8cac\u4efb\u611f\u7684\u5546\u696d\u5be6\u8e10\uff0c\u5f9e\u800c\u6709\u52a9\u65bc\u9577\u671f\u7684\u793e\u6703\u53ef\u6301\u7e8c\u767c\u5c55\u3002"
+  }
+]
