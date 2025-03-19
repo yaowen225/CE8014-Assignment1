@@ -51,9 +51,12 @@ Additional parameters:
 
 ## how to run
 
+1. add your api key to "run_and_extract.bat" file.
+2. open cmd and type(remember to replace the path):
 ```bash
--cd to file
-- run_and_extract.bat
+cd "your_file_path\Assignment 1_113922002\all project file\WebVoyager"
+
+run_and_extract.bat
 ```
 
 ## Output Files
